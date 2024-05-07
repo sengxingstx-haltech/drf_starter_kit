@@ -4,12 +4,14 @@ from rest_framework_simplejwt.views import (
 )
 from django.urls import path, include
 from rest_framework import routers
+from accounts.views import AccountViewSet, PermissionViewSet, RoleViewSet
 from . import views
 
 
 router = routers.DefaultRouter()
-router.register(r'users', views.UserViewSet)
-router.register(r'groups', views.GroupViewSet)
+router.register(r'accounts', AccountViewSet)
+router.register(r'permissions', PermissionViewSet)
+router.register(r'roles', RoleViewSet)
 router.register(r'employees', views.EmployeeViewSet)
 
 
